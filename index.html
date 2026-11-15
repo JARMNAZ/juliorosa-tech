@@ -243,7 +243,6 @@
         }
 
         .nav-dropdown:hover .dropdown-menu,
-        .nav-dropdown:focus-within .dropdown-menu,
         .nav-dropdown.open .dropdown-menu {
             opacity: 1;
             visibility: visible;
@@ -3795,6 +3794,9 @@
 
         function closeAllDropdowns() {
             document.querySelectorAll('.nav-dropdown.open').forEach(d => d.classList.remove('open'));
+            if (document.activeElement && document.activeElement.closest && document.activeElement.closest('.nav-dropdown')) {
+                document.activeElement.blur();
+            }
         }
 
         function handleNavTabClick(event, viewName) {
@@ -3818,6 +3820,16 @@
                 closeAllDropdowns();
             }
         });
+
+        window.addEventListener('scroll', () => {
+            closeAllDropdowns();
+        }, { passive: true });
+
+        document.addEventListener('touchmove', (e) => {
+            if (!e.target.closest('.dropdown-menu')) {
+                closeAllDropdowns();
+            }
+        }, { passive: true });
 
         // --- Cambio de vista entre "Mi Portafolio" y "Últimas Novedades Julio Rosa Tech" ---
         function switchView(viewName, skipScroll) {
