@@ -79,8 +79,12 @@
             background-color: var(--bg-dark);
             color: var(--text-main);
             margin: 0;
-            padding: 0;
+            padding: 72px 0 0 0;
             line-height: 1.6;
+        }
+
+        section, .post-article-card, .case-detail-panel {
+            scroll-margin-top: 90px;
         }
 
         .container {
@@ -91,13 +95,17 @@
 
         /* ================= TOP NAVBAR & DROPDOWN MENU ================= */
         .site-navbar {
-            position: sticky;
+            position: fixed;
             top: 0;
-            z-index: 1500;
-            background-color: rgba(15, 16, 19, 0.90);
-            backdrop-filter: blur(14px);
-            -webkit-backdrop-filter: blur(14px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            left: 0;
+            right: 0;
+            width: 100%;
+            z-index: 2500;
+            background-color: rgba(15, 16, 19, 0.92);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+            box-shadow: 0 8px 28px rgba(0, 0, 0, 0.45);
             padding: 0.85rem 0;
         }
 
@@ -1137,11 +1145,17 @@
             box-sizing: border-box;
         }
         html, body {
-            overflow-x: hidden;
+            overflow-x: clip;
             max-width: 100%;
         }
 
         @media (max-width: 768px) {
+            body {
+                padding-top: 98px;
+            }
+            section, .post-article-card, .case-detail-panel {
+                scroll-margin-top: 110px;
+            }
             .container {
                 padding: 0 1rem;
             }
@@ -3716,10 +3730,15 @@
         }
 
         function toggleLanguage() {
+            const maxScrollBefore = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+            const scrollRatio = window.scrollY / maxScrollBefore;
             const next = document.documentElement.lang === 'en' ? 'es' : 'en';
             try { localStorage.setItem('lang', next); } catch (e) {}
             applyLanguage(next);
-            window.scrollTo({ top: 0 });
+            requestAnimationFrame(() => {
+                const maxScrollAfter = Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
+                window.scrollTo({ top: scrollRatio * maxScrollAfter });
+            });
         }
 
         // --- Cambio de vista entre "Mi Portafolio" y "Últimas Novedades Julio Rosa Tech" ---
