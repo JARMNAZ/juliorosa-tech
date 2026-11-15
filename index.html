@@ -1557,6 +1557,7 @@
                         <span class="dropdown-caret">▼</span>
                     </button>
                     <div class="dropdown-menu">
+                        <button type="button" onclick="openCaseStudy('autodm', 'es')">🤖 Caso de Estudio: Motor Auto-DM Instagram (n8n + Graph API)</button>
                         <button type="button" onclick="goToArticle('post-fitbit-es', 'doc-fitbit-es')">⌚ Review Extendida: Google Fitbit Air (Lo Bueno y Lo Malo)</button>
                         <button type="button" onclick="goToArticle('post-gemini-es', 'doc-gemini-es')">🎓 Guía: Gemini Gratis + 5 TB + YT Premium</button>
                         <button type="button" onclick="goToArticle('post-mcp-es', 'doc-mcp-es')">🔌 Guía: ¿Qué es API + MCP? (Documentación)</button>
@@ -1591,6 +1592,7 @@
                         <span class="dropdown-caret">▼</span>
                     </button>
                     <div class="dropdown-menu">
+                        <button type="button" onclick="openCaseStudy('autodm', 'en')">🤖 Case Study: Instagram Auto-DM Engine (n8n + Graph API)</button>
                         <button type="button" onclick="goToArticle('post-fitbit-en', 'doc-fitbit-en')">⌚ Full Review: Google Fitbit Air (Pros, Cons & Links)</button>
                         <button type="button" onclick="goToArticle('post-gemini-en', 'doc-gemini-en')">🎓 Guide: Free Gemini + 5 TB + YT Premium</button>
                         <button type="button" onclick="goToArticle('post-mcp-en', 'doc-mcp-en')">🔌 Guide: What is API + MCP? (Full Docs)</button>
@@ -1743,6 +1745,17 @@
                     <h2 class="section-title">Casos de Estudio & <span>Consultoría</span></h2>
                     <p style="text-align: center; color: var(--text-muted); margin-top: -2rem; margin-bottom: 2.5rem;">Haz clic en cualquier proyecto para abrir el apartado detallado de imágenes, arquitectura y videos demostrativos.</p>
                     <div class="grid">
+                        <div class="card case-card-clickable" onclick="openCaseStudy('autodm', 'es')" role="button" tabindex="0">
+                            <div>
+                                <h3>Motor de Automatización & Auto-DM para Instagram</h3>
+                                <span class="date-badge">n8n | Meta Graph API | Telegram SRE</span><span class="noc-live-pill">🎬 Video Demo + 5 Capturas</span>
+                                <p>Desarrollo de una arquitectura propia basada en Webhooks en tiempo real para automatizar respuestas a comentarios y entrega de DMs con botones interactivos en @juliorosa.tech. Incluye discriminación estricta por ID de publicación (Reel), tolerancia a errores ortográficos, lógica anti-spam con fallback automático y un sistema Watchdog de monitoreo 24/7 en Telegram.</p>
+                            </div>
+                            <div class="case-card-action">
+                                <span>📸 Ver Galería, Video & Arquitectura</span>
+                                <span>→</span>
+                            </div>
+                        </div>
                         <div class="card case-card-clickable" onclick="openCaseStudy('sitting', 'es')" role="button" tabindex="0">
                             <div>
                                 <h3>Sitting Digital para Bodas</h3>
@@ -1803,6 +1816,7 @@
                     <!-- Apartado Detallado de Caso de Estudio (Imágenes y Videos) -->
                     <div id="case-detail-es" class="case-detail-panel">
                         <div class="case-selector-pills">
+                            <button type="button" class="case-pill-btn" data-case="autodm" onclick="openCaseStudy('autodm', 'es')">🤖 Auto-DM Instagram (n8n)</button>
                             <button type="button" class="case-pill-btn" data-case="sitting" onclick="openCaseStudy('sitting', 'es')">Sitting Digital</button>
                             <button type="button" class="case-pill-btn" data-case="noc" onclick="openCaseStudy('noc', 'es')">Mesa NOC (JSM)</button>
                             <button type="button" class="case-pill-btn" data-case="merchant" onclick="openCaseStudy('merchant', 'es')">Merchant Workflow</button>
@@ -1812,10 +1826,10 @@
 
                         <div class="case-detail-header">
                             <div>
-                                <span id="case-badge-es" class="date-badge">Serverless | Google Apps Script</span>
-                                <h3 id="case-title-es">Sitting Digital para Bodas</h3>
+                                <span id="case-badge-es" class="date-badge">n8n | Meta Graph API | Telegram SRE</span>
+                                <h3 id="case-title-es">Motor de Automatización & Auto-DM para Instagram</h3>
                                 <p id="case-desc-es" style="color: var(--text-muted); max-width: 780px; margin: 0;">
-                                    Sistema web móvil interactivo para la gestión de invitados en tiempo real con arquitectura Serverless en Google Apps Script y auditoría inmutable.
+                                    Arquitectura Self-Hosted en n8n conectada a la Graph API oficial de Meta para gestionar embudos Comentario ➔ Respuesta Pública + DM con Botones Interactivos en tiempo real y monitoreo de errores en Telegram.
                                 </p>
                             </div>
                             <button type="button" class="btn btn-outline" onclick="closeCaseStudy('es')">✕ Cerrar Vista Detallada</button>
@@ -1849,8 +1863,160 @@
                             </div>
                         </div>
 
+                        <!-- Bloque Completo del Caso de Estudio: MOTOR AUTO-DM INSTAGRAM (ES) -->
+                        <div id="case-autodm-es">
+                            <div class="noc-privacy-banner">
+                                <span class="shield-icon">🛡️</span>
+                                <div>
+                                    <strong>Privacidad & Seguridad de Infraestructura:</strong> En las capturas y diagramas mostrados a continuación, <strong>las direcciones IP locales, tokens de acceso OAuth, endpoints de túneles y lógica interna de validación han sido censurados</strong> por seguridad operativa.
+                                </div>
+                            </div>
+
+                            <!-- 1. VIDEO DEMO EN VIVO -->
+                            <h4 class="noc-section-subtitle">🎬 Demostración en Tiempo Real: <span>Comentario en Reel ➔ Respuesta Pública + DM con Botones Interactivos</span></h4>
+                            <div class="noc-video-stage">
+                                <video id="autodm-player-es" controls preload="metadata" muted playsinline src="assets/autodm/video-demo-autodm.mp4"></video>
+                                <div class="noc-video-caption-bar">
+                                    <div>
+                                        <h5>Ejecución en Vivo en @juliorosa.tech mediante Webhooks Oficiales de Meta</h5>
+                                        <p>Demostración del flujo completo desde que un usuario comenta una palabra clave en un Reel específico hasta que el motor responde públicamente al comentario y entrega el mensaje privado con tarjetas de botones clicables.</p>
+                                    </div>
+                                    <span class="date-badge">Infraestructura Propia ✓</span>
+                                </div>
+                            </div>
+
+                            <!-- 2. GALERÍA DE 5 CAPTURAS REALES -->
+                            <h4 class="noc-section-subtitle">📸 Galería de <span>Interfaz en Instagram, Flujos en n8n & Watchdog en Telegram (Haz clic para ampliar)</span></h4>
+                            <div class="noc-gallery-grid">
+                                <div class="noc-shot-card" onclick="openLightbox('assets/autodm/01-comentario-reel-respuesta.jpg', 'Respuesta Pública Automática en el Reel: el motor detecta la palabra clave en tiempo real y responde mencionando al usuario con el sello de Author')">
+                                    <div class="noc-shot-thumb-wrap">
+                                        <img src="assets/autodm/01-comentario-reel-respuesta.jpg" alt="Respuesta automática en comentario de Reel" loading="lazy">
+                                        <span class="noc-shot-zoom-badge">🔍 Ampliar</span>
+                                    </div>
+                                    <div class="noc-shot-body">
+                                        <span class="noc-shot-tag">Instagram Reel · Engagement</span>
+                                        <h5>1. Respuesta Pública Instantánea</h5>
+                                        <p>Responde automáticamente al comentario mencionando al usuario para confirmar que la información fue enviada a su bandeja privada.</p>
+                                    </div>
+                                </div>
+
+                                <div class="noc-shot-card" onclick="openLightbox('assets/autodm/02-dm-botones-interactivos.jpg', 'DM Privado con Botones Interactivos Nativos: envío de enlaces directos dentro de botones clicables estructurados mediante la Graph API')">
+                                    <div class="noc-shot-thumb-wrap">
+                                        <img src="assets/autodm/02-dm-botones-interactivos.jpg" alt="DM con botones interactivos en Instagram" loading="lazy">
+                                        <span class="noc-shot-zoom-badge">🔍 Ampliar</span>
+                                    </div>
+                                    <div class="noc-shot-body">
+                                        <span class="noc-shot-tag">Instagram DM · Botones Nativos</span>
+                                        <h5>2. DMs con Botones Interactivos Clicables</h5>
+                                        <p>Entrega mensajes privados utilizando plantillas estructuradas con botones de acción directa hacia enlaces externos o documentación.</p>
+                                    </div>
+                                </div>
+
+                                <div class="noc-shot-card" onclick="openLightbox('assets/autodm/03-arquitectura-n8n-autodm.png', 'Arquitectura del Motor Principal en n8n: recepción por Webhook en tiempo real, filtro por Reel y palabra clave, pausa anti-spam y nodo de respaldo automático')">
+                                    <div class="noc-shot-thumb-wrap">
+                                        <img src="assets/autodm/03-arquitectura-n8n-autodm.png" alt="Workflow Auto-DM en n8n" loading="lazy">
+                                        <span class="noc-shot-zoom-badge">🔍 Ampliar</span>
+                                    </div>
+                                    <div class="noc-shot-body">
+                                        <span class="noc-shot-tag">Backend n8n · Webhooks</span>
+                                        <h5>3. Motor de Campañas Multi-Reel & Fallback</h5>
+                                        <p>Arquitectura orientada a eventos en tiempo real (sin polling periódico), con pausa anti-spam y nodo de respaldo automático en texto plano.</p>
+                                    </div>
+                                </div>
+
+                                <div class="noc-shot-card" onclick="openLightbox('assets/autodm/04-watchdog-errores-n8n.png', 'Sistema Centinela (Watchdog) en n8n: flujo independiente conectado a los workflows de producción para capturar cualquier anomalía al instante')">
+                                    <div class="noc-shot-thumb-wrap">
+                                        <img src="assets/autodm/04-watchdog-errores-n8n.png" alt="Monitor Central de Errores n8n" loading="lazy">
+                                        <span class="noc-shot-zoom-badge">🔍 Ampliar</span>
+                                    </div>
+                                    <div class="noc-shot-body">
+                                        <span class="noc-shot-tag">Monitoreo SRE · Continuidad</span>
+                                        <h5>4. Watchdog Central de Errores 24/7</h5>
+                                        <p>Flujo centinela dedicado que supervisa las ejecuciones en segundo plano y genera diagnósticos automáticos ante cualquier fallo de red o API.</p>
+                                    </div>
+                                </div>
+
+                                <div class="noc-shot-card" onclick="openLightbox('assets/autodm/05-alerta-telegram-sre.png', 'Alerta en Tiempo Real en Telegram (IPs y rutas censuradas): notificación instantánea al celular indicando workflow, nodo exacto, código de estado y hora')">
+                                    <div class="noc-shot-thumb-wrap">
+                                        <img src="assets/autodm/05-alerta-telegram-sre.png" alt="Alerta de monitoreo en Telegram" loading="lazy">
+                                        <span class="noc-shot-zoom-badge">🔍 Ampliar</span>
+                                    </div>
+                                    <div class="noc-shot-body">
+                                        <span class="noc-shot-tag">Telegram Bot · Alertas en Vivo</span>
+                                        <h5>5. Notificaciones de Diagnóstico en Telegram</h5>
+                                        <p>Envía alertas estructuradas en tiempo real detallando el workflow afectado, el nodo exacto del fallo y la marca de tiempo.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 3. ARQUITECTURA TÉCNICA Y TABLA COMPARATIVA -->
+                            <h4 class="noc-section-subtitle">📐 Ingeniería del Sistema & <span>Decisiones de Arquitectura</span></h4>
+                            <div class="noc-arch-grid">
+                                <div class="noc-arch-card">
+                                    <h5>⚡ Arquitectura Event-Driven (Cero Polling)</h5>
+                                    <ul class="styled-list" style="margin:0; font-size:0.86rem;">
+                                        <li><strong>Ejecución 100% por Webhook:</strong> El motor permanece en reposo sin consumir recursos y solo se activa en el milisegundo exacto en que Meta notifica un nuevo comentario.</li>
+                                        <li><strong>Infraestructura Self-Hosted:</strong> Elimina los límites de contactos y las suscripciones escalonadas de las plataformas SaaS comerciales.</li>
+                                        <li><strong>Control Total del Payload:</strong> Comunicación directa con los endpoints oficiales sin intermediarios.</li>
+                                    </ul>
+                                </div>
+
+                                <div class="noc-arch-card">
+                                    <h5>🎯 Aislamiento por Publicación & Anti-Typos</h5>
+                                    <ul class="styled-list" style="margin:0; font-size:0.86rem;">
+                                        <li><strong>Discriminación por <code>mediaId</code>:</strong> Cada campaña valida el identificador único del Reel donde se originó el comentario, evitando disparos cruzados en otras publicaciones del perfil.</li>
+                                        <li><strong>Diccionario Tolerante a Errores:</strong> Reconoce variaciones ortográficas comunes al escribir rápido desde el móvil.</li>
+                                        <li><strong>Prevención de Bucles:</strong> Ignora automáticamente los comentarios emitidos por la propia cuenta autora.</li>
+                                    </ul>
+                                </div>
+
+                                <div class="noc-arch-card">
+                                    <h5>🛡️ Resiliencia, Fallback & Observabilidad</h5>
+                                    <ul class="styled-list" style="margin:0; font-size:0.86rem;">
+                                        <li><strong>Pausa Anti-Spam Integrada:</strong> Introduce un retardo controlado entre la respuesta pública y el mensaje privado para mantener un comportamiento natural.</li>
+                                        <li><strong>Degradación Elegante (Fallback):</strong> Si el cliente de Instagram del destinatario no soporta plantillas de botones, una rama secundaria entrega el contenido en texto enriquecido.</li>
+                                        <li><strong>Observabilidad vía Telegram:</strong> Vinculado a un workflow <code>Error Trigger</code> centralizado.</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="noc-sla-table-wrap">
+                                <table class="noc-sla-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Criterio Técnico / Operativo</th>
+                                            <th>Plataformas SaaS Tradicionales (ej. ManyChat)</th>
+                                            <th>Arquitectura Propia en n8n (@juliorosa.tech)</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><strong>Modelo de Costos y Escalabilidad</strong></td>
+                                            <td>Cobro mensual recurrente según el volumen de contactos acumulados</td>
+                                            <td><strong style="color:var(--accent);">Infraestructura Self-Hosted ($0/mes en licencias por contactos)</strong></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Plantillas con Botones Interactivos en DM</strong></td>
+                                            <td>Restringido a planes de pago Pro</td>
+                                            <td><strong style="color:var(--accent);">Implementación nativa + Rama de respaldo automático en texto</strong></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Aislamiento de Campañas por Reel</strong></td>
+                                            <td>Configuración manual por cada post en interfaz externa</td>
+                                            <td><strong style="color:var(--accent);">Enrutamiento centralizado por <code>mediaId</code> + Diccionario anti-typos</strong></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Observabilidad y Alertas de Fallos</strong></td>
+                                            <td>Logs básicos dentro de la plataforma</td>
+                                            <td><strong style="color:var(--accent);">Watchdog dedicado con reporte instantáneo a Telegram 24/7</strong></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
                         <!-- Bloque Completo del Caso de Estudio: SITTING DIGITAL PARA BODAS (ES) -->
-                        <div id="case-sitting-es">
+                        <div id="case-sitting-es" style="display: none;">
                             <div class="noc-privacy-banner">
                                 <span class="shield-icon">🛡️</span>
                                 <div>
@@ -2358,12 +2524,27 @@
 
                     <!-- Filtros de categorías -->
                     <div class="filter-bar">
-                        <button type="button" class="filter-btn active" onclick="filterPosts('all', this)">🔥 Todas las Publicaciones (6)</button>
+                        <button type="button" class="filter-btn active" onclick="filterPosts('all', this)">🔥 Todas las Publicaciones (7)</button>
                         <button type="button" class="filter-btn" onclick="filterPosts('ia-mcp', this)">🔌 IA, APIs & MCP</button>
                         <button type="button" class="filter-btn" onclick="filterPosts('guias', this)">🎓 Guías & Reviews Tech</button>
                         <button type="button" class="filter-btn" onclick="filterPosts('reels', this)">🎬 Videos & Reels</button>
                     </div>
                 </div>
+
+                <!-- ARTÍCULO DESTACADO: MOTOR AUTO-DM EN N8N -->
+                <article id="post-autodm-es" class="post-article-card" data-category="ia-mcp reels">
+                    <div class="post-meta-top">
+                        <span class="post-type-badge">🤖 Proyecto Propio · Automatización en Producción</span>
+                        <span class="date-badge">n8n + Meta Graph API + Telegram SRE</span>
+                    </div>
+                    <h3>Arquitectura Propia de Auto-DM & Respuestas en Tiempo Real para Instagram con n8n</h3>
+                    <p class="post-summary">
+                        Desarrollé el motor interno que gestiona automáticamente los comentarios y la entrega de enlaces con <strong>botones interactivos por DM</strong> en <strong>@juliorosa.tech</strong>, operando 100% por Webhooks con aislamiento por cada Reel y un sistema <strong>Watchdog 24/7 en Telegram</strong> para monitoreo de fallos.
+                    </p>
+                    <div class="btn-group">
+                        <button type="button" class="btn" onclick="openCaseStudy('autodm', 'es')">🎬 Ver Video Demo, Galería & Arquitectura →</button>
+                    </div>
+                </article>
 
                 <!-- ARTÍCULO NUEVO: GOOGLE FITBIT AIR — REVIEW EXTENDIDA (8 MINUTOS COMPLETOS) -->
                 <article id="post-fitbit-es" class="post-article-card" data-category="guias reels">
@@ -2772,6 +2953,17 @@
                     <h2 class="section-title">Case Studies & <span>Consulting</span></h2>
                     <p style="text-align: center; color: var(--text-muted); margin-top: -2rem; margin-bottom: 2.5rem;">Click on any project card to open the detailed showcase with images, architecture diagrams, and demo videos.</p>
                     <div class="grid">
+                        <div class="card case-card-clickable" onclick="openCaseStudy('autodm', 'en')" role="button" tabindex="0">
+                            <div>
+                                <h3>Automated Instagram DM & Engagement Engine</h3>
+                                <span class="date-badge">n8n | Meta Graph API | Telegram SRE</span><span class="noc-live-pill">🎬 Video Demo + 5 Screenshots</span>
+                                <p>Engineered an event-driven webhook architecture to automate public comment replies and deliver interactive button DMs in real time for @juliorosa.tech. Features strict per-Reel campaign isolation, typo-tolerant keyword matching, anti-spam pacing with plain-text fallback, and a 24/7 Telegram SRE error watchdog.</p>
+                            </div>
+                            <div class="case-card-action">
+                                <span>📸 View Gallery, Video & Architecture</span>
+                                <span>→</span>
+                            </div>
+                        </div>
                         <div class="card case-card-clickable" onclick="openCaseStudy('sitting', 'en')" role="button" tabindex="0">
                             <div>
                                 <h3>Digital Seating Chart for Weddings</h3>
@@ -2832,6 +3024,7 @@
                     <!-- Detailed Case Study Showcase Panel (EN) -->
                     <div id="case-detail-en" class="case-detail-panel">
                         <div class="case-selector-pills">
+                            <button type="button" class="case-pill-btn" data-case="autodm" onclick="openCaseStudy('autodm', 'en')">🤖 Instagram Auto-DM (n8n)</button>
                             <button type="button" class="case-pill-btn" data-case="sitting" onclick="openCaseStudy('sitting', 'en')">Digital Seating Chart</button>
                             <button type="button" class="case-pill-btn" data-case="noc" onclick="openCaseStudy('noc', 'en')">NOC Service Desk (JSM)</button>
                             <button type="button" class="case-pill-btn" data-case="merchant" onclick="openCaseStudy('merchant', 'en')">Merchant Workflow</button>
@@ -2841,10 +3034,10 @@
 
                         <div class="case-detail-header">
                             <div>
-                                <span id="case-badge-en" class="date-badge">Serverless | Google Apps Script</span>
-                                <h3 id="case-title-en">Digital Seating Chart for Weddings</h3>
+                                <span id="case-badge-en" class="date-badge">n8n | Meta Graph API | Telegram SRE</span>
+                                <h3 id="case-title-en">Automated Instagram DM & Engagement Engine</h3>
                                 <p id="case-desc-en" style="color: var(--text-muted); max-width: 780px; margin: 0;">
-                                    Interactive mobile web system for real-time guest management with Serverless architecture on Google Apps Script and immutable audit logging.
+                                    Self-hosted n8n architecture integrated with the official Meta Graph API to orchestrate real-time Comment ➔ Public Reply + Interactive Button DM workflows with 24/7 Telegram error monitoring.
                                 </p>
                             </div>
                             <button type="button" class="btn btn-outline" onclick="closeCaseStudy('en')">✕ Close Detailed View</button>
@@ -2878,8 +3071,93 @@
                             </div>
                         </div>
 
+                        <!-- Complete CUSTOM INSTAGRAM AUTO-DM Case Study Showcase (EN) -->
+                        <div id="case-autodm-en">
+                            <div class="noc-privacy-banner">
+                                <span class="shield-icon">🛡️</span>
+                                <div>
+                                    <strong>Infrastructure Privacy & Security:</strong> In the screenshots and workflow diagrams below, <strong>local IP addresses, OAuth access tokens, tunnel endpoints, and internal validation scripts have been redacted</strong> for operational security.
+                                </div>
+                            </div>
+
+                            <h4 class="noc-section-subtitle">🎬 Real-Time Production Demo: <span>Reel Comment ➔ Public Reply + Interactive Button DM</span></h4>
+                            <div class="noc-video-stage">
+                                <video id="autodm-player-en" controls preload="metadata" muted playsinline src="assets/autodm/video-demo-autodm.mp4"></video>
+                                <div class="noc-video-caption-bar">
+                                    <div>
+                                        <h5>Live Webhook Execution on @juliorosa.tech via Official Meta Graph API</h5>
+                                        <p>End-to-end demonstration showing a keyword comment on a specific Reel triggering an instant public reply and delivering a structured private message with clickable buttons.</p>
+                                    </div>
+                                    <span class="date-badge">Self-Hosted Stack ✓</span>
+                                </div>
+                            </div>
+
+                            <h4 class="noc-section-subtitle">📸 Production Gallery: <span>Interactive Buttons, n8n Engine & Telegram Watchdog (Click to Zoom)</span></h4>
+                            <div class="noc-gallery-grid">
+                                <div class="noc-shot-card" onclick="openLightbox('assets/autodm/01-comentario-reel-respuesta.jpg', 'Instant Public Comment Reply: detects the keyword in real time and replies tagging the user with the Author badge')">
+                                    <div class="noc-shot-thumb-wrap">
+                                        <img src="assets/autodm/01-comentario-reel-respuesta.jpg" alt="Automated public comment reply on Instagram Reel" loading="lazy">
+                                        <span class="noc-shot-zoom-badge">🔍 Zoom</span>
+                                    </div>
+                                    <div class="noc-shot-body">
+                                        <span class="noc-shot-tag">Instagram Reel · Engagement</span>
+                                        <h5>1. Instant Public Comment Reply</h5>
+                                        <p>Automatically replies to the user's comment confirming that the requested links were delivered to their DMs.</p>
+                                    </div>
+                                </div>
+
+                                <div class="noc-shot-card" onclick="openLightbox('assets/autodm/02-dm-botones-interactivos.jpg', 'Interactive Button DMs: delivers native clickable CTA buttons inside Instagram Direct Messages')">
+                                    <div class="noc-shot-thumb-wrap">
+                                        <img src="assets/autodm/02-dm-botones-interactivos.jpg" alt="Interactive buttons inside Instagram DM" loading="lazy">
+                                        <span class="noc-shot-zoom-badge">🔍 Zoom</span>
+                                    </div>
+                                    <div class="noc-shot-body">
+                                        <span class="noc-shot-tag">Instagram DM · Native Buttons</span>
+                                        <h5>2. Native Interactive CTA Buttons</h5>
+                                        <p>Sends structured DMs with clickable action buttons linking directly to resources, Amazon links, or documentation.</p>
+                                    </div>
+                                </div>
+
+                                <div class="noc-shot-card" onclick="openLightbox('assets/autodm/03-arquitectura-n8n-autodm.png', 'Core n8n Engine Architecture: real-time Webhook trigger, per-Reel campaign matcher, anti-spam delay, and automatic fallback node')">
+                                    <div class="noc-shot-thumb-wrap">
+                                        <img src="assets/autodm/03-arquitectura-n8n-autodm.png" alt="n8n Auto-DM workflow architecture" loading="lazy">
+                                        <span class="noc-shot-zoom-badge">🔍 Zoom</span>
+                                    </div>
+                                    <div class="noc-shot-body">
+                                        <span class="noc-shot-tag">n8n Backend · Webhooks</span>
+                                        <h5>3. Multi-Reel Campaign Engine & Fallback</h5>
+                                        <p>100% event-driven webhook architecture with anti-spam pacing and an automatic plain-text fallback branch.</p>
+                                    </div>
+                                </div>
+
+                                <div class="noc-shot-card" onclick="openLightbox('assets/autodm/04-watchdog-errores-n8n.png', 'Central Error Watchdog in n8n: dedicated sentinel workflow monitoring all production automations 24/7')">
+                                    <div class="noc-shot-thumb-wrap">
+                                        <img src="assets/autodm/04-watchdog-errores-n8n.png" alt="n8n Central Error Monitor" loading="lazy">
+                                        <span class="noc-shot-zoom-badge">🔍 Zoom</span>
+                                    </div>
+                                    <div class="noc-shot-body">
+                                        <span class="noc-shot-tag">SRE Monitoring · Uptime</span>
+                                        <h5>4. 24/7 Error Watchdog Workflow</h5>
+                                        <p>Independent sentinel workflow that intercepts any execution error and formats an instant diagnostic report.</p>
+                                    </div>
+                                </div>
+
+                                <div class="noc-shot-card" onclick="openLightbox('assets/autodm/05-alerta-telegram-sre.png', 'Real-Time Telegram Alert (IPs and internal routes redacted): instant mobile notification showing workflow, failing node, HTTP status, and timestamp')">
+                                    <div class="noc-shot-thumb-wrap">
+                                        <img src="assets/autodm/05-alerta-telegram-sre.png" alt="Telegram SRE alert notification" loading="lazy">
+                                        <span class="noc-shot-zoom-badge">🔍 Zoom</span>
+                                    </div>
+                                    <div class="noc-shot-body">
+                                        <span class="noc-shot-tag">Telegram Bot · Live Alerts</span>
+                                        <h5>5. Instant Telegram Diagnostic Alerts</h5>
+                                        <p>Delivers structured real-time mobile notifications detailing the affected workflow, failing node, and exact timestamp.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                         <!-- Complete DIGITAL SEATING CHART Case Study Showcase (EN) -->
-                        <div id="case-sitting-en">
+                        <div id="case-sitting-en" style="display: none;">
                             <div class="noc-privacy-banner">
                                 <span class="shield-icon">🛡️</span>
                                 <div>
@@ -3513,6 +3791,18 @@
 
         // --- Datos y lógica del apartado detallado de Casos de Estudio ---
         const caseStudiesData = {
+            autodm: {
+                es: {
+                    badge: 'n8n | Meta Graph API | Telegram SRE',
+                    title: 'Motor de Automatización & Auto-DM para Instagram',
+                    desc: 'Arquitectura Self-Hosted en n8n conectada a la Graph API oficial de Meta para gestionar embudos Comentario ➔ Respuesta Pública + DM con Botones Interactivos en tiempo real, con filtrado por Reel y monitoreo de errores en Telegram.'
+                },
+                en: {
+                    badge: 'n8n | Meta Graph API | Telegram SRE',
+                    title: 'Automated Instagram DM & Engagement Engine',
+                    desc: 'Self-hosted n8n architecture integrated with the official Meta Graph API to orchestrate real-time Comment ➔ Public Reply + Interactive Button DM workflows, featuring per-Reel isolation and 24/7 Telegram error monitoring.'
+                }
+            },
             sitting: {
                 es: {
                     badge: 'Serverless | Google Apps Script',
@@ -3587,18 +3877,22 @@
             document.getElementById('case-desc-' + l).textContent = data.desc;
 
             const genericBlock = document.getElementById('case-generic-' + l);
+            const autodmBlock = document.getElementById('case-autodm-' + l);
             const sittingBlock = document.getElementById('case-sitting-' + l);
             const nocBlock = document.getElementById('case-noc-' + l);
 
+            const pAuto = document.getElementById('autodm-player-' + l);
             const pNoc = document.getElementById('noc-player-' + l);
             const pSit = document.getElementById('sitting-player-' + l);
+            if (pAuto && caseKey !== 'autodm') pAuto.pause();
             if (pNoc && caseKey !== 'noc') pNoc.pause();
             if (pSit && caseKey !== 'sitting') pSit.pause();
 
             if (genericBlock && sittingBlock && nocBlock) {
+                if (autodmBlock) autodmBlock.style.display = (caseKey === 'autodm') ? 'block' : 'none';
                 sittingBlock.style.display = (caseKey === 'sitting') ? 'block' : 'none';
                 nocBlock.style.display = (caseKey === 'noc') ? 'block' : 'none';
-                genericBlock.style.display = (caseKey !== 'sitting' && caseKey !== 'noc') ? 'block' : 'none';
+                genericBlock.style.display = (caseKey !== 'autodm' && caseKey !== 'sitting' && caseKey !== 'noc') ? 'block' : 'none';
             }
 
             panel.querySelectorAll('.case-pill-btn').forEach(btn => {
@@ -3617,12 +3911,15 @@
             if (panel) panel.classList.remove('open');
         }
 
-        // Si alguien entra con #novedades o #fitbit en la URL (ej. desde tu bio o DM de Instagram), abre Novedades directo
+        // Si alguien entra con #novedades, #fitbit o #autodm en la URL (ej. desde tu bio o DM de Instagram)
         if (window.location.hash === '#novedades') {
             switchView('novedades', true);
         } else if (window.location.hash === '#fitbit') {
             const isEn = document.documentElement.lang === 'en';
             goToArticle(isEn ? 'post-fitbit-en' : 'post-fitbit-es', isEn ? 'doc-fitbit-en' : 'doc-fitbit-es');
+        } else if (window.location.hash === '#autodm') {
+            const isEn = document.documentElement.lang === 'en';
+            openCaseStudy('autodm', isEn ? 'en' : 'es');
         }
 
         applyLanguage(document.documentElement.lang === 'en' ? 'en' : 'es');
