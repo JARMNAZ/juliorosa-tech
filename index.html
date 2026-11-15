@@ -1207,10 +1207,58 @@
                 text-overflow: ellipsis;
             }
             .nav-badge-new,
-            .dropdown-caret,
-            .dropdown-menu,
             .nav-dropdown::after {
                 display: none !important;
+            }
+            .dropdown-caret {
+                display: inline-block !important;
+                font-size: 0.65rem;
+                margin-left: 0.15rem;
+            }
+            .nav-dropdown:hover .dropdown-menu,
+            .nav-dropdown:focus-within .dropdown-menu {
+                opacity: 0;
+                visibility: hidden;
+                pointer-events: none;
+                transform: translateY(-6px);
+            }
+            .nav-dropdown.open .dropdown-menu {
+                opacity: 1 !important;
+                visibility: visible !important;
+                pointer-events: auto !important;
+                transform: translateY(0) !important;
+            }
+            .nav-dropdown:hover .dropdown-caret {
+                transform: none;
+            }
+            .nav-dropdown.open .dropdown-caret {
+                transform: rotate(180deg) !important;
+            }
+            .dropdown-menu {
+                display: block !important;
+                position: fixed;
+                top: 96px;
+                left: 0.75rem;
+                right: 0.75rem;
+                width: auto;
+                min-width: 0;
+                max-height: calc(100vh - 115px);
+                overflow-y: auto;
+                background-color: rgba(20, 22, 29, 0.98);
+                backdrop-filter: blur(18px);
+                -webkit-backdrop-filter: blur(18px);
+                border: 1px solid rgba(204, 255, 0, 0.4);
+                border-radius: 16px;
+                padding: 0.55rem;
+                box-shadow: 0 22px 48px rgba(0, 0, 0, 0.82);
+                z-index: 3000;
+            }
+            .dropdown-menu a,
+            .dropdown-menu button {
+                padding: 0.68rem 0.85rem;
+                font-size: 0.86rem;
+                white-space: normal;
+                line-height: 1.35;
             }
 
             /* 2. Hero Section: Foto arriba centrada, textos adaptados y botones en cuadrícula 2x3 */
@@ -1549,7 +1597,7 @@
             <div class="nav-controls nav-es">
                 <!-- Menú Desplegable 1: Perfil & Consultoría -->
                 <div class="nav-dropdown">
-                    <button type="button" class="nav-tab-btn tab-portfolio active" onclick="switchView('portfolio')">
+                    <button type="button" class="nav-tab-btn tab-portfolio active" onclick="handleNavTabClick(event, 'portfolio')">
                         👨‍💻 Perfil & Consultoría <span class="dropdown-caret">▼</span>
                     </button>
                     <div class="dropdown-menu">
@@ -1565,12 +1613,14 @@
 
                 <!-- Menú Desplegable 2: Últimas Novedades Julio Rosa Tech -->
                 <div class="nav-dropdown">
-                    <button type="button" class="nav-tab-btn tab-novedades" onclick="switchView('novedades')">
+                    <button type="button" class="nav-tab-btn tab-novedades" onclick="handleNavTabClick(event, 'novedades')">
                         ⚡ Últimas Novedades<span class="hide-on-mobile"> · Julio Rosa Tech</span>
                         <span class="nav-badge-new">IG Docs</span>
                         <span class="dropdown-caret">▼</span>
                     </button>
                     <div class="dropdown-menu">
+                        <button type="button" onclick="switchView('novedades')">⚡ Ver Todo el Feed de Novedades</button>
+                        <div class="dropdown-divider"></div>
                         <button type="button" onclick="openCaseStudy('autodm', 'es')">🤖 Caso de Estudio: Motor Auto-DM Instagram (n8n + Graph API)</button>
                         <button type="button" onclick="goToArticle('post-fitbit-es', 'doc-fitbit-es')">⌚ Review Extendida: Google Fitbit Air (Lo Bueno y Lo Malo)</button>
                         <button type="button" onclick="goToArticle('post-gemini-es', 'doc-gemini-es')">🎓 Guía: Gemini Gratis + 5 TB + YT Premium</button>
@@ -1585,7 +1635,7 @@
             <!-- Controles en Inglés -->
             <div class="nav-controls nav-en">
                 <div class="nav-dropdown">
-                    <button type="button" class="nav-tab-btn tab-portfolio active" onclick="switchView('portfolio')">
+                    <button type="button" class="nav-tab-btn tab-portfolio active" onclick="handleNavTabClick(event, 'portfolio')">
                         👨‍💻 Profile & Consulting <span class="dropdown-caret">▼</span>
                     </button>
                     <div class="dropdown-menu">
@@ -1600,12 +1650,14 @@
                 </div>
 
                 <div class="nav-dropdown">
-                    <button type="button" class="nav-tab-btn tab-novedades" onclick="switchView('novedades')">
+                    <button type="button" class="nav-tab-btn tab-novedades" onclick="handleNavTabClick(event, 'novedades')">
                         ⚡ Latest Updates<span class="hide-on-mobile"> · Julio Rosa Tech</span>
                         <span class="nav-badge-new">IG Docs</span>
                         <span class="dropdown-caret">▼</span>
                     </button>
                     <div class="dropdown-menu">
+                        <button type="button" onclick="switchView('novedades')">⚡ View All Tech Updates</button>
+                        <div class="dropdown-divider"></div>
                         <button type="button" onclick="openCaseStudy('autodm', 'en')">🤖 Case Study: Instagram Auto-DM Engine (n8n + Graph API)</button>
                         <button type="button" onclick="goToArticle('post-fitbit-en', 'doc-fitbit-en')">⌚ Full Review: Google Fitbit Air (Pros, Cons & Links)</button>
                         <button type="button" onclick="goToArticle('post-gemini-en', 'doc-gemini-en')">🎓 Guide: Free Gemini + 5 TB + YT Premium</button>
@@ -3741,8 +3793,35 @@
             });
         }
 
+        function closeAllDropdowns() {
+            document.querySelectorAll('.nav-dropdown.open').forEach(d => d.classList.remove('open'));
+        }
+
+        function handleNavTabClick(event, viewName) {
+            const isMobile = window.innerWidth <= 768;
+            const dropdown = event.currentTarget.closest('.nav-dropdown');
+            if (isMobile && dropdown) {
+                event.stopPropagation();
+                const wasOpen = dropdown.classList.contains('open');
+                closeAllDropdowns();
+                if (!wasOpen) {
+                    dropdown.classList.add('open');
+                }
+                return;
+            }
+            closeAllDropdowns();
+            switchView(viewName);
+        }
+
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.nav-dropdown') || e.target.closest('.dropdown-menu')) {
+                closeAllDropdowns();
+            }
+        });
+
         // --- Cambio de vista entre "Mi Portafolio" y "Últimas Novedades Julio Rosa Tech" ---
         function switchView(viewName, skipScroll) {
+            closeAllDropdowns();
             const v = viewName === 'novedades' ? 'novedades' : 'portfolio';
             document.body.setAttribute('data-view', v);
 
@@ -3766,6 +3845,10 @@
         function goToSection(viewName, sectionId) {
             switchView(viewName, true);
             setTimeout(() => {
+                if (sectionId === 'top') {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                    return;
+                }
                 const el = document.getElementById(sectionId);
                 if (el) el.scrollIntoView({ behavior: 'smooth' });
             }, 40);
