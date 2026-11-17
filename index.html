@@ -3781,9 +3781,29 @@
         }
 
         function toggleLanguage() {
-            const savedY = window.scrollY;
+            const getY = () => window.scrollY || window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+            const setY = (y) => {
+                window.scrollTo({ top: y, left: 0, behavior: 'instant' });
+                document.documentElement.scrollTop = y;
+                document.body.scrollTop = y;
+            };
+
+            const savedY = getY();
             const prev = document.documentElement.lang === 'en' ? 'en' : 'es';
             const next = prev === 'en' ? 'es' : 'en';
+
+            // Detectar en qué sección visible está el usuario para mantener la misma posición exacta en móvil
+            let anchorId = null;
+            let anchorOffset = 0;
+            const candidates = document.querySelectorAll(`#content-${prev} [id$="-${prev}"]`);
+            for (const el of candidates) {
+                const rect = el.getBoundingClientRect();
+                if (rect.height > 0 && rect.bottom > 80) {
+                    anchorId = el.id.slice(0, -(prev.length + 1)) + '-' + next;
+                    anchorOffset = rect.top;
+                    break;
+                }
+            }
 
             // Sincronizar si había algún panel de Caso de Estudio o Documentación abierto
             const prevCasePanel = document.getElementById('case-detail-' + prev);
@@ -3803,11 +3823,31 @@
             document.documentElement.style.scrollBehavior = 'auto';
             try { localStorage.setItem('lang', next); } catch (e) {}
             applyLanguage(next);
-            window.scrollTo(0, savedY);
-            requestAnimationFrame(() => {
-                window.scrollTo(0, savedY);
+
+            const restore = () => {
+                if (savedY <= 10) {
+                    setY(0);
+                    return;
+                }
+                if (anchorId) {
+                    const targetEl = document.getElementById(anchorId);
+                    if (targetEl) {
+                        const targetTop = targetEl.getBoundingClientRect().top + getY() - anchorOffset;
+                        if (targetTop >= 0) {
+                            setY(targetTop);
+                            return;
+                        }
+                    }
+                }
+                setY(savedY);
+            };
+
+            restore();
+            requestAnimationFrame(restore);
+            setTimeout(() => {
+                restore();
                 document.documentElement.style.scrollBehavior = '';
-            });
+            }, 40);
         }
 
         function closeAllDropdowns() {
