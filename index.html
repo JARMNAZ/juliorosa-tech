@@ -1846,7 +1846,7 @@
                         <div class="card case-card-clickable" onclick="openCaseStudy('merchant', 'es')" role="button" tabindex="0">
                             <div>
                                 <h3>Merchant Integration Workflow - Fintech</h3>
-                                <span class="date-badge">Jira Software | TGN</span>
+                                <span class="date-badge">Jira Software | TGN</span><span class="noc-live-pill">🎬 2 Videos + 5 Capturas</span>
                                 <p>Creación de un ecosistema en Jira para controlar la integración de clientes comerciales (Merchants) desde Sandbox hasta Producción. Uso de transiciones bloqueantes, Table Grid Next Gen (TGN) para perfiles antifraude, y Smart Checklists para auditoría inmutable de aprobaciones legales y financieras.</p>
                             </div>
                             <div class="case-card-action">
@@ -2501,6 +2501,170 @@
                                 </table>
                             </div>
                         </div>
+
+                        <!-- Bloque Completo del Caso de Estudio: MERCHANT INTEGRATION WORKFLOW - FINTECH (ES) -->
+                        <div id="case-merchant-es" style="display: none;">
+                            <div class="noc-privacy-banner">
+                                <span class="shield-icon">🛡️</span>
+                                <div>
+                                    <strong>Privacidad & Cumplimiento NDA (Fintech PSP):</strong> Todas las capturas y recorridos en video provienen de la instancia real de Jira Software en producción, con <strong>logos de la pasarela de pagos, dominios corporativos de Atlassian, nombres comerciales de Merchants activos y usuarios internos censurados</strong> para proteger la confidencialidad financiera.
+                                </div>
+                            </div>
+
+                            <!-- 1. RECORRIDOS EN VIDEO (2 CLIPS) -->
+                            <h4 class="noc-section-subtitle">🎬 Demos en Video del <span>Ecosistema de Onboarding Fintech en Jira (2 Clips)</span></h4>
+                            <div class="noc-video-tabs" id="merchant-video-tabs-es">
+                                <button type="button" class="noc-video-tab active" onclick="switchMerchantVideo('es', 0, this)">1️⃣ Transiciones Bloqueantes & Pop-up de Suspensión (To Suspended)</button>
+                                <button type="button" class="noc-video-tab" onclick="switchMerchantVideo('es', 1, this)">2️⃣ Ficha Completa del Merchant, Custom Fields & Checklist de 9 Aprobaciones</button>
+                            </div>
+
+                            <div class="noc-video-stage">
+                                <video id="merchant-player-es" controls preload="metadata" muted playsinline src="assets/merchant/video-transiciones-suspension.mp4"></video>
+                                <div class="noc-video-caption-bar">
+                                    <div>
+                                        <h5 id="merchant-video-title-es">1. Control de Transiciones en Kanban & Formulario Obligatorio de Suspensión</h5>
+                                        <p id="merchant-video-desc-es">Demostración de las restricciones del workflow en el tablero Funnel (bloqueando saltos directos a NEW o LIVE sin aprobaciones) y apertura automática de la pantalla modal al pasar a Suspended exigiendo Motivo de Suspensión, Notas y revocación de usuarios MBO.</p>
+                                    </div>
+                                    <span class="date-badge">Datos Fintech Censurados ✓</span>
+                                </div>
+                            </div>
+
+                            <!-- 2. GALERÍA DE CAPTURAS EN ALTA RESOLUCIÓN (5 IMÁGENES CON LIGHTBOX) -->
+                            <h4 class="noc-section-subtitle">📸 Galería Técnica de <span>Tablero Funnel, Table Grid Next Gen (TGN) & Gobernanza (Haz clic para ampliar)</span></h4>
+                            <div class="noc-gallery-grid">
+                                <div class="noc-shot-card" onclick="openLightbox('assets/merchant/01-kanban-lifecycle-board.png', 'Tablero Kanban del Ciclo de Vida del Merchant (NEW ➔ SANDBOX ➔ PROD ➔ LIVE ➔ SUSPENDED) con nombres de comercios y espacios corporativos censurados')">
+                                    <div class="noc-shot-thumb-wrap">
+                                        <img src="assets/merchant/01-kanban-lifecycle-board.png" alt="Tablero Kanban Merchant Lifecycle" loading="lazy">
+                                        <span class="noc-shot-zoom-badge">🔍 Ampliar</span>
+                                    </div>
+                                    <div class="noc-shot-body">
+                                        <span class="noc-shot-tag">Ciclo de Vida · 5 Etapas</span>
+                                        <h5>1. Tablero Kanban de Integración (Funnel)</h5>
+                                        <p>Control visual extremo a extremo de cada comercio desde el registro inicial por Ventas (NEW) y pruebas en SANDBOX hasta PROD, LIVE y SUSPENDED.</p>
+                                    </div>
+                                </div>
+
+                                <div class="noc-shot-card" onclick="openLightbox('assets/merchant/02-table-grid-tgn-config.png', 'Configuración en Table Grid Next Gen (TGN): 3 tablas relacionales estructuradas (FUN – Counterparts Table, FUN – Hierarchy & Routing Table y FUN – MBO PROD Users Table)')">
+                                    <div class="noc-shot-thumb-wrap">
+                                        <img src="assets/merchant/02-table-grid-tgn-config.png" alt="Table Grid Next Gen TGN Grids" loading="lazy">
+                                        <span class="noc-shot-zoom-badge">🔍 Ampliar</span>
+                                    </div>
+                                    <div class="noc-shot-body">
+                                        <span class="noc-shot-tag">Table Grid Next Gen · TGN</span>
+                                        <h5>2. Tablas Estructuradas TGN (Enrutamiento & Antifraude)</h5>
+                                        <p>Tres grillas relacionales dentro del ticket: Entidades Legales (Counterparts), Jerarquía/Enrutamiento con Perfil Antifraude y Usuarios MBO PROD.</p>
+                                    </div>
+                                </div>
+
+                                <div class="noc-shot-card" onclick="openLightbox('assets/merchant/03-sidebar-tgn-funnel.png', 'Integración de módulos en Jira Cloud: acceso directo a Grids, Grid Custom Fields, Data Sources, Tokens y Multi Level Cascade junto al espacio Funnel')">
+                                    <div class="noc-shot-thumb-wrap">
+                                        <img src="assets/merchant/03-sidebar-tgn-funnel.png" alt="Módulos Table Grid en Jira" loading="lazy">
+                                        <span class="noc-shot-zoom-badge">🔍 Ampliar</span>
+                                    </div>
+                                    <div class="noc-shot-body">
+                                        <span class="noc-shot-tag">Arquitectura Apps · Jira</span>
+                                        <h5>3. Ecosistema de Plugins & Orquestación TGN</h5>
+                                        <p>Configuración de campos personalizados de grilla, fuentes de datos y cascadas multinivel conectadas al flujo de onboarding comercial.</p>
+                                    </div>
+                                </div>
+
+                                <div class="noc-shot-card" onclick="openLightbox('assets/merchant/04-merchant-custom-fields.png', 'Esquema de Custom Fields del Merchant: CRM Name, Instance (Converge/Nowa), Payment Methods, Main/Processing Currencies, Integration Email, Fraud/Finance Emails y Suspend Reason')">
+                                    <div class="noc-shot-thumb-wrap">
+                                        <img src="assets/merchant/04-merchant-custom-fields.png" alt="Campos personalizados Merchant" loading="lazy">
+                                        <span class="noc-shot-zoom-badge">🔍 Ampliar</span>
+                                    </div>
+                                    <div class="noc-shot-body">
+                                        <span class="noc-shot-tag">Gobernanza · Custom Fields</span>
+                                        <h5>4. Campos Personalizados por Etapa & Validación</h5>
+                                        <p>Captura estructurada de instancia (Converge/Nowa), métodos de pago (Card, Blik, Pix, PayByLink), divisas base/procesamiento y correos de fraude y finanzas.</p>
+                                    </div>
+                                </div>
+
+                                <div class="noc-shot-card" onclick="openLightbox('assets/merchant/05-smart-checklist-subtasks.png', 'Trazabilidad de Auditoría y Aprobaciones Departamentales: 9 hitos obligatorios (Sandbox sent, Integration completed, PROD sent, Live testing, Finance OK, Legal OK, CEO OK, Ops notification y Live)')">
+                                    <div class="noc-shot-thumb-wrap">
+                                        <img src="assets/merchant/05-smart-checklist-subtasks.png" alt="Checklist y Subtareas de Aprobación" loading="lazy">
+                                        <span class="noc-shot-zoom-badge">🔍 Ampliar</span>
+                                    </div>
+                                    <div class="noc-shot-body">
+                                        <span class="noc-shot-tag">Auditoría · 9 Aprobaciones</span>
+                                        <h5>5. Checklist de Aprobaciones Multi-Departamento</h5>
+                                        <p>Control auditable de los 9 hitos de salida a producción, incluyendo visto bueno de Finanzas (Finance OK), Legal (Legal OK), Dirección (CEO OK) y Operaciones.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 3. ARQUITECTURA TÉCNICA IMPLEMENTADA (BASADA EN EL DOCUMENTO DE ESPECIFICACIÓN) -->
+                            <h4 class="noc-section-subtitle">📐 Arquitectura del Flujo & <span>Reglas de Gobernanza Fintech</span></h4>
+                            <div class="noc-arch-grid">
+                                <div class="noc-arch-card">
+                                    <h5>🧭 Ciclo de Vida en 5 Estados Controlados</h5>
+                                    <div class="code-flow" style="font-size:0.78rem; padding:0.85rem; margin-bottom:0.8rem;">
+[1. NEW (Ventas)] ──► [2. SANDBOX (Tech)] ──(Pop-up Validación)──► [3. PROD (Tech/Legal/Finanzas/CEO)] ──► [4. LIVE (Bloqueado Auditoría)] / [5. SUSPENDED]
+                                    </div>
+                                    <ul class="styled-list" style="margin:0; font-size:0.85rem;">
+                                        <li><strong>New & Sandbox:</strong> Ventas registra CRM Name, Instancia (<em>Converge / Nowa</em>), divisas y tabla de entidades legales; Tech envía credenciales y etiqueta el progreso (<code>idle</code>, <code>ongoing</code>, <code>completed</code>).</li>
+                                        <li><strong>PROD & Live:</strong> Al completar las 9 validaciones con usuario y timestamp, el comercio pasa a <strong>Live</strong> y las tablas quedan bloqueadas para integridad de auditoría.</li>
+                                    </ul>
+                                </div>
+
+                                <div class="noc-arch-card">
+                                    <h5>🔒 Transiciones Bloqueantes & Pop-ups</h5>
+                                    <ul class="styled-list" style="margin:0; font-size:0.86rem;">
+                                        <li><strong>Gatekeeper Sandbox ➔ PROD:</strong> Despliega automáticamente una pantalla de transición que bloquea el paso a producción si faltan el <em>Fraud Notification Email</em>, <em>Finance Notification Email</em> o las tablas TGN de producción.</li>
+                                        <li><strong>Protocolo de Suspensión (Any ➔ Suspended):</strong> Abre un formulario modal obligatorio exigiendo <em>Suspend Reason</em>, checkbox <em>Disable MBO Users? (Yes/No)</em> y notas operativas.</li>
+                                        <li><strong>Restricción de Columnas en Kanban:</strong> Impide arrastrar tarjetas hacia estados no autorizados según la matriz de permisos del workflow.</li>
+                                    </ul>
+                                </div>
+
+                                <div class="noc-arch-card">
+                                    <h5>✅ Auditoría Inmutable (9 Hitos de Control)</h5>
+                                    <ul class="styled-list" style="margin:0; font-size:0.86rem;">
+                                        <li><strong>Trazabilidad por Usuario y Fecha:</strong> Cada ítem completado registra automáticamente quién dio la aprobación y la marca de tiempo exacta (ej. <em>Finance OK — 2025-11-09 11:15</em>).</li>
+                                        <li><strong>Aprobación C-Level & Compliance:</strong> Separa las pruebas técnicas (<em>Sandbox sent, Integration completed, PROD configured, Live testing</em>) de las firmas ejecutivas (<em>Finance OK, Legal OK, CEO OK, Operations notification, Live</em>).</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- 4. TABLA DE ESQUEMAS DE TABLE GRID NEXT GEN (TGN) Y CAMPOS -->
+                            <div class="noc-sla-table-wrap">
+                                <table class="noc-sla-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Tabla / Módulo en Jira (TGN)</th>
+                                            <th>Etapa de Exigencia / Bloqueo</th>
+                                            <th>Columnas & Tipos de Datos Estructurados</th>
+                                            <th>Objetivo de Negocio & Compliance Fintech</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><strong style="color:var(--accent);">1. Counterparts Table (TGN)</strong></td>
+                                            <td>Requerida desde <code>NEW</code> (Ventas)</td>
+                                            <td><code>Legal Name</code> (Texto oblig.), <code>Website URL</code> (Texto oblig.)</td>
+                                            <td>Registrar una o múltiples razones sociales y dominios web asociados al grupo comercial del Merchant.</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong style="color:var(--accent);">2. Hierarchy & Routing Table (TGN)</strong></td>
+                                            <td>Obligatoria en transición <code>SANDBOX ➔ PROD</code></td>
+                                            <td><code>Counterpart</code>, <code>Shop Name</code>, <code>URL</code>, <code>Payment Method</code> (Dropdown), <code>Provider</code>, <code>Terminal</code>, <code>Routing</code>, <code>Anti-Fraud Profile</code> (Low/Med/High)</td>
+                                            <td>Definir el enrutamiento técnico por tienda, pasarela proveedora, terminal asignada, moneda/país y nivel de perfil antifraude.</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong style="color:var(--accent);">3. MBO PROD Users Table (TGN)</strong></td>
+                                            <td>Obligatoria en transición <code>SANDBOX ➔ PROD</code></td>
+                                            <td><code>Name</code> (Texto), <code>Email</code> (Email), <code>Role</code> (Dropdown: Admin, Finance, Tech, Support), <code>Status</code> (Dropdown: Active, Disabled)</td>
+                                            <td>Controlar el padrón de usuarios con acceso al Backoffice del Merchant (MBO) en producción y facilitar su desactivación inmediata ante una suspensión.</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong style="color:var(--accent);">4. Smart Checklist & Custom Fields</strong></td>
+                                            <td>Transversal (<code>NEW ➔ LIVE / SUSPENDED</code>)</td>
+                                            <td>14 Custom Fields + 9 ítems de aprobación con registro de autor/hora y bloqueo en estado <code>LIVE</code></td>
+                                            <td>Garantizar que ningún comercio procese dinero real sin aprobación firmada por Legal, Finanzas, Operaciones y CEO.</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
                     </div>
                 </section>
 
@@ -3054,7 +3218,7 @@
                         <div class="card case-card-clickable" onclick="openCaseStudy('merchant', 'en')" role="button" tabindex="0">
                             <div>
                                 <h3>Merchant Integration Workflow - Fintech</h3>
-                                <span class="date-badge">Jira Software | TGN</span>
+                                <span class="date-badge">Jira Software | TGN</span><span class="noc-live-pill">🎬 2 Videos + 5 Screenshots</span>
                                 <p>Created an ecosystem in Jira to manage the onboarding of commercial clients (Merchants) from Sandbox to Production. Utilized blocking transitions, Table Grid Next Gen (TGN) for anti-fraud profiles, and Smart Checklists for an immutable audit trail of legal and financial approvals.</p>
                             </div>
                             <div class="case-card-action">
@@ -3523,6 +3687,170 @@
                                         <p>Maps the property selected by the user in the portal form dropdown directly to the native JSM Organization field.</p>
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+
+                        <!-- Complete MERCHANT INTEGRATION WORKFLOW - FINTECH Case Study Showcase (EN) -->
+                        <div id="case-merchant-en" style="display: none;">
+                            <div class="noc-privacy-banner">
+                                <span class="shield-icon">🛡️</span>
+                                <div>
+                                    <strong>Privacy & NDA Compliance (Fintech PSP):</strong> All screenshots and video walkthroughs below come from the live Jira Software production environment, with <strong>payment gateway logos, corporate Atlassian domains, active Merchant commercial names, and internal staff accounts redacted</strong> to protect financial confidentiality.
+                                </div>
+                            </div>
+
+                            <!-- 1. VIDEO WALKTHROUGHS (2 CLIPS) -->
+                            <h4 class="noc-section-subtitle">🎬 Live Production <span>Fintech Onboarding Walkthroughs in Jira (2 Clips)</span></h4>
+                            <div class="noc-video-tabs" id="merchant-video-tabs-en">
+                                <button type="button" class="noc-video-tab active" onclick="switchMerchantVideo('en', 0, this)">1️⃣ Blocking Transitions & Suspension Pop-up Form (To Suspended)</button>
+                                <button type="button" class="noc-video-tab" onclick="switchMerchantVideo('en', 1, this)">2️⃣ Full Merchant Issue, Custom Fields & 9-Step Approval Checklist</button>
+                            </div>
+
+                            <div class="noc-video-stage">
+                                <video id="merchant-player-en" controls preload="metadata" muted playsinline src="assets/merchant/video-transiciones-suspension.mp4"></video>
+                                <div class="noc-video-caption-bar">
+                                    <div>
+                                        <h5 id="merchant-video-title-en">1. Kanban Transition Restrictions & Mandatory Suspension Modal</h5>
+                                        <p id="merchant-video-desc-en">Demonstrates workflow transition guards on the Funnel board (blocking unauthorized jumps to NEW or LIVE) and the automated modal screen when moving a merchant to Suspended, enforcing Suspend Reason, Notes, and MBO user revocation.</p>
+                                    </div>
+                                    <span class="date-badge">Fintech Data Redacted ✓</span>
+                                </div>
+                            </div>
+
+                            <!-- 2. HIGH-RESOLUTION SCREENSHOT GALLERY (5 IMAGES WITH LIGHTBOX) -->
+                            <h4 class="noc-section-subtitle">📸 High-Resolution <span>Funnel Board, Table Grid Next Gen (TGN) & Governance Gallery (Click to Zoom)</span></h4>
+                            <div class="noc-gallery-grid">
+                                <div class="noc-shot-card" onclick="openLightbox('assets/merchant/01-kanban-lifecycle-board.png', 'Merchant Lifecycle Kanban Board (NEW ➔ SANDBOX ➔ PROD ➔ LIVE ➔ SUSPENDED) with live merchant names and corporate spaces redacted')">
+                                    <div class="noc-shot-thumb-wrap">
+                                        <img src="assets/merchant/01-kanban-lifecycle-board.png" alt="Merchant Lifecycle Kanban Board" loading="lazy">
+                                        <span class="noc-shot-zoom-badge">🔍 Zoom</span>
+                                    </div>
+                                    <div class="noc-shot-body">
+                                        <span class="noc-shot-tag">Lifecycle · 5 Stages</span>
+                                        <h5>1. Merchant Onboarding Kanban Board (Funnel)</h5>
+                                        <p>End-to-end visual pipeline tracking commercial clients from initial Sales registration (NEW) and SANDBOX testing to PROD, LIVE, and SUSPENDED.</p>
+                                    </div>
+                                </div>
+
+                                <div class="noc-shot-card" onclick="openLightbox('assets/merchant/02-table-grid-tgn-config.png', 'Table Grid Next Gen (TGN) Configuration: 3 structured relational grids (FUN – Counterparts Table, FUN – Hierarchy & Routing Table, and FUN – MBO PROD Users Table)')">
+                                    <div class="noc-shot-thumb-wrap">
+                                        <img src="assets/merchant/02-table-grid-tgn-config.png" alt="Table Grid Next Gen TGN Grids" loading="lazy">
+                                        <span class="noc-shot-zoom-badge">🔍 Zoom</span>
+                                    </div>
+                                    <div class="noc-shot-body">
+                                        <span class="noc-shot-tag">Table Grid Next Gen · TGN</span>
+                                        <h5>2. Structured TGN Grids (Routing & Anti-Fraud)</h5>
+                                        <p>Three relational grids embedded inside each Merchant issue: Legal Counterparts, Hierarchy/Routing with Anti-Fraud Profiles, and MBO PROD Users.</p>
+                                    </div>
+                                </div>
+
+                                <div class="noc-shot-card" onclick="openLightbox('assets/merchant/03-sidebar-tgn-funnel.png', 'Jira Cloud App Integration: direct access to Grids, Grid Custom Fields, Data Sources, Tokens, and Multi Level Cascade alongside the Funnel space')">
+                                    <div class="noc-shot-thumb-wrap">
+                                        <img src="assets/merchant/03-sidebar-tgn-funnel.png" alt="Table Grid Modules in Jira" loading="lazy">
+                                        <span class="noc-shot-zoom-badge">🔍 Zoom</span>
+                                    </div>
+                                    <div class="noc-shot-body">
+                                        <span class="noc-shot-tag">App Architecture · Jira</span>
+                                        <h5>3. TGN App Ecosystem & Data Orchestration</h5>
+                                        <p>Custom grid fields, external data sources, and multi-level cascades connected directly to the commercial onboarding workflow.</p>
+                                    </div>
+                                </div>
+
+                                <div class="noc-shot-card" onclick="openLightbox('assets/merchant/04-merchant-custom-fields.png', 'Merchant Custom Fields Schema: CRM Name, Instance (Converge/Nowa), Payment Methods, Main/Processing Currencies, Integration Email, Fraud/Finance Emails, and Suspend Reason')">
+                                    <div class="noc-shot-thumb-wrap">
+                                        <img src="assets/merchant/04-merchant-custom-fields.png" alt="Merchant Custom Fields" loading="lazy">
+                                        <span class="noc-shot-zoom-badge">🔍 Zoom</span>
+                                    </div>
+                                    <div class="noc-shot-body">
+                                        <span class="noc-shot-tag">Governance · Custom Fields</span>
+                                        <h5>4. Stage-Validated Custom Fields</h5>
+                                        <p>Structured capture of platform instance (Converge/Nowa), payment methods (Card, Blik, Pix, PayByLink), base/processing currencies, and fraud/finance alerts.</p>
+                                    </div>
+                                </div>
+
+                                <div class="noc-shot-card" onclick="openLightbox('assets/merchant/05-smart-checklist-subtasks.png', 'Audit Trail & Departmental Approvals: 9 mandatory milestones (Sandbox sent, Integration completed, PROD sent, Live testing, Finance OK, Legal OK, CEO OK, Ops notification, and Live)')">
+                                    <div class="noc-shot-thumb-wrap">
+                                        <img src="assets/merchant/05-smart-checklist-subtasks.png" alt="Approval Checklist and Subtasks" loading="lazy">
+                                        <span class="noc-shot-zoom-badge">🔍 Zoom</span>
+                                    </div>
+                                    <div class="noc-shot-body">
+                                        <span class="noc-shot-tag">Audit Trail · 9 Approvals</span>
+                                        <h5>5. Multi-Department Approval Checklist</h5>
+                                        <p>Immutable tracking across all 9 go-live milestones, including sign-offs from Finance (Finance OK), Legal (Legal OK), Executive (CEO OK), and Operations.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 3. SYSTEM ARCHITECTURE & FINTECH GOVERNANCE -->
+                            <h4 class="noc-section-subtitle">📐 Workflow Architecture & <span>Fintech Governance Rules</span></h4>
+                            <div class="noc-arch-grid">
+                                <div class="noc-arch-card">
+                                    <h5>🧭 5-Stage Controlled Lifecycle</h5>
+                                    <div class="code-flow" style="font-size:0.78rem; padding:0.85rem; margin-bottom:0.8rem;">
+[1. NEW (Sales)] ──► [2. SANDBOX (Tech)] ──(Validation Pop-up)──► [3. PROD (Tech/Legal/Finance/CEO)] ──► [4. LIVE (Audit-Locked)] / [5. SUSPENDED]
+                                    </div>
+                                    <ul class="styled-list" style="margin:0; font-size:0.85rem;">
+                                        <li><strong>New & Sandbox:</strong> Sales registers CRM Name, Instance (<em>Converge / Nowa</em>), currencies, and legal Counterparts; Tech delivers sandbox credentials and tracks status labels (<code>idle</code>, <code>ongoing</code>, <code>completed</code>).</li>
+                                        <li><strong>PROD & Live:</strong> Once all 9 departmental checks are signed off with user and timestamp, the merchant transitions to <strong>Live</strong> and tables lock for audit integrity.</li>
+                                    </ul>
+                                </div>
+
+                                <div class="noc-arch-card">
+                                    <h5>🔒 Blocking Transitions & Modal Screens</h5>
+                                    <ul class="styled-list" style="margin:0; font-size:0.86rem;">
+                                        <li><strong>Sandbox ➔ PROD Gatekeeper:</strong> Automatically triggers a transition screen that blocks production promotion if <em>Fraud Notification Email</em>, <em>Finance Notification Email</em>, or required TGN grids are missing.</li>
+                                        <li><strong>Suspension Protocol (Any ➔ Suspended):</strong> Opens a mandatory pop-up form requiring <em>Suspend Reason</em>, <em>Disable MBO Users? (Yes/No)</em> checkbox, and routing notes.</li>
+                                        <li><strong>Kanban Column Guards:</strong> Prevents cards from being dragged into unauthorized columns based on workflow permission rules.</li>
+                                    </ul>
+                                </div>
+
+                                <div class="noc-arch-card">
+                                    <h5>✅ Immutable Audit Trail (9 Control Milestones)</h5>
+                                    <ul class="styled-list" style="margin:0; font-size:0.86rem;">
+                                        <li><strong>User & Timestamp Attribution:</strong> Every completed milestone records the exact approver and date/time inline (e.g., <em>Finance OK — 2025-11-09 11:15</em>).</li>
+                                        <li><strong>C-Level & Compliance Sign-Off:</strong> Separates technical integration steps (<em>Sandbox sent, Integration completed, PROD configured, Live testing</em>) from executive governance (<em>Finance OK, Legal OK, CEO OK, Operations notification, Live</em>).</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- 4. TABLE GRID NEXT GEN (TGN) SCHEMA TABLE -->
+                            <div class="noc-sla-table-wrap">
+                                <table class="noc-sla-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Jira Table / Module (TGN)</th>
+                                            <th>Validation / Blocking Stage</th>
+                                            <th>Structured Columns & Field Types</th>
+                                            <th>Fintech Business & Compliance Purpose</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><strong style="color:var(--accent);">1. Counterparts Table (TGN)</strong></td>
+                                            <td>Required in <code>NEW</code> (Sales)</td>
+                                            <td><code>Legal Name</code> (Text req.), <code>Website URL</code> (Text req.)</td>
+                                            <td>Registers one or multiple legal entities and storefront URLs belonging to the merchant group.</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong style="color:var(--accent);">2. Hierarchy & Routing Table (TGN)</strong></td>
+                                            <td>Mandatory on <code>SANDBOX ➔ PROD</code></td>
+                                            <td><code>Counterpart</code>, <code>Shop Name</code>, <code>URL</code>, <code>Payment Method</code> (Dropdown), <code>Provider</code>, <code>Terminal</code>, <code>Routing</code>, <code>Anti-Fraud Profile</code> (Low/Med/High)</td>
+                                            <td>Defines per-shop payment routing, acquiring provider, terminal ID, currency/country pair, and anti-fraud risk tier.</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong style="color:var(--accent);">3. MBO PROD Users Table (TGN)</strong></td>
+                                            <td>Mandatory on <code>SANDBOX ➔ PROD</code></td>
+                                            <td><code>Name</code> (Text), <code>Email</code> (Email), <code>Role</code> (Dropdown: Admin, Finance, Tech, Support), <code>Status</code> (Dropdown: Active, Disabled)</td>
+                                            <td>Controls production Merchant Backoffice (MBO) user accounts and enables immediate revocation upon suspension.</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong style="color:var(--accent);">4. Smart Checklist & Custom Fields</strong></td>
+                                            <td>Cross-Stage (<code>NEW ➔ LIVE / SUSPENDED</code>)</td>
+                                            <td>14 Custom Fields + 9 timestamped approval items locked upon reaching <code>LIVE</code></td>
+                                            <td>Ensures no commercial client processes live transactions without signed Legal, Finance, Operations, and CEO approval.</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
@@ -4054,19 +4382,23 @@
             const autodmBlock = document.getElementById('case-autodm-' + l);
             const sittingBlock = document.getElementById('case-sitting-' + l);
             const nocBlock = document.getElementById('case-noc-' + l);
+            const merchantBlock = document.getElementById('case-merchant-' + l);
 
             const pAuto = document.getElementById('autodm-player-' + l);
             const pNoc = document.getElementById('noc-player-' + l);
             const pSit = document.getElementById('sitting-player-' + l);
+            const pMer = document.getElementById('merchant-player-' + l);
             if (pAuto && caseKey !== 'autodm') pAuto.pause();
             if (pNoc && caseKey !== 'noc') pNoc.pause();
             if (pSit && caseKey !== 'sitting') pSit.pause();
+            if (pMer && caseKey !== 'merchant') pMer.pause();
 
             if (genericBlock && sittingBlock && nocBlock) {
                 if (autodmBlock) autodmBlock.style.display = (caseKey === 'autodm') ? 'block' : 'none';
                 sittingBlock.style.display = (caseKey === 'sitting') ? 'block' : 'none';
                 nocBlock.style.display = (caseKey === 'noc') ? 'block' : 'none';
-                genericBlock.style.display = (caseKey !== 'autodm' && caseKey !== 'sitting' && caseKey !== 'noc') ? 'block' : 'none';
+                if (merchantBlock) merchantBlock.style.display = (caseKey === 'merchant') ? 'block' : 'none';
+                genericBlock.style.display = (caseKey !== 'autodm' && caseKey !== 'sitting' && caseKey !== 'noc' && caseKey !== 'merchant') ? 'block' : 'none';
             }
 
             panel.querySelectorAll('.case-pill-btn').forEach(btn => {
@@ -4096,6 +4428,9 @@
         } else if (window.location.hash === '#autodm') {
             const isEn = document.documentElement.lang === 'en';
             openCaseStudy('autodm', isEn ? 'en' : 'es');
+        } else if (window.location.hash === '#merchant') {
+            const isEn = document.documentElement.lang === 'en';
+            openCaseStudy('merchant', isEn ? 'en' : 'es');
         }
 
         applyLanguage(document.documentElement.lang === 'en' ? 'en' : 'es');
@@ -4181,6 +4516,57 @@
             const player = document.getElementById('noc-player-' + l);
             const titleEl = document.getElementById('noc-video-title-' + l);
             const descEl = document.getElementById('noc-video-desc-' + l);
+
+            if (titleEl) titleEl.textContent = list[index].title;
+            if (descEl) descEl.textContent = list[index].desc;
+            if (player) {
+                player.src = list[index].src;
+                player.load();
+                player.play().catch(() => {});
+            }
+        }
+
+        const merchantVideosMeta = {
+            es: [
+                {
+                    src: 'assets/merchant/video-transiciones-suspension.mp4',
+                    title: '1. Control de Transiciones en Kanban & Formulario Obligatorio de Suspensión',
+                    desc: 'Demostración de las restricciones del workflow en el tablero Funnel (bloqueando saltos directos a NEW o LIVE sin aprobaciones) y apertura automática de la pantalla modal al pasar a Suspended exigiendo Motivo de Suspensión, Notas y revocación de usuarios MBO.'
+                },
+                {
+                    src: 'assets/merchant/video-ficha-merchant-checklist.mp4',
+                    title: '2. Ficha Completa del Merchant, Custom Fields & Checklist de 9 Aprobaciones',
+                    desc: 'Recorrido por el ticket del Merchant mostrando los campos personalizados (CRM Name, Instance, Agregador, Payment Methods, Currencies, Integration Email) y las 9 subtareas/hitos de aprobación departamental (Sandbox, Integration, PROD, Live testing, Finance OK, Legal OK, CEO OK, Ops y Live).'
+                }
+            ],
+            en: [
+                {
+                    src: 'assets/merchant/video-transiciones-suspension.mp4',
+                    title: '1. Kanban Transition Restrictions & Mandatory Suspension Modal',
+                    desc: 'Demonstrates workflow transition guards on the Funnel board (blocking unauthorized jumps to NEW or LIVE) and the automated modal screen when moving a merchant to Suspended, enforcing Suspend Reason, Notes, and MBO user revocation.'
+                },
+                {
+                    src: 'assets/merchant/video-ficha-merchant-checklist.mp4',
+                    title: '2. Full Merchant Issue, Custom Fields & 9-Step Approval Checklist',
+                    desc: 'Walkthrough of the Merchant issue showcasing custom fields (CRM Name, Instance, Aggregator, Payment Methods, Currencies, Integration Email) and the 9 departmental approval subtasks/milestones (Sandbox, Integration, PROD, Live testing, Finance OK, Legal OK, CEO OK, Ops, and Live).'
+                }
+            ]
+        };
+
+        function switchMerchantVideo(lang, index, btnEl) {
+            const l = lang === 'en' ? 'en' : 'es';
+            const list = merchantVideosMeta[l];
+            if (!list || !list[index]) return;
+
+            const tabsWrap = document.getElementById('merchant-video-tabs-' + l);
+            if (tabsWrap) {
+                tabsWrap.querySelectorAll('.noc-video-tab').forEach(b => b.classList.remove('active'));
+            }
+            if (btnEl) btnEl.classList.add('active');
+
+            const player = document.getElementById('merchant-player-' + l);
+            const titleEl = document.getElementById('merchant-video-title-' + l);
+            const descEl = document.getElementById('merchant-video-desc-' + l);
 
             if (titleEl) titleEl.textContent = list[index].title;
             if (descEl) descEl.textContent = list[index].desc;

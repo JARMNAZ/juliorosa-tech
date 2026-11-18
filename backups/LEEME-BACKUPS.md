@@ -10,3 +10,5 @@ En esta carpeta se guardan automáticamente todas las versiones anteriores de `i
 
 ## ¿Cómo restaurar una versión anterior?
 Simplemente copia cualquiera de los archivos `.html` de esta carpeta, renómbralo a `index.html` en la raíz del proyecto (`C:\Users\julio\Desktop\Deploy-web-porfafolio-jr\index.html`) y haz `git commit` + `git push`.
+
+6. **6-produccion-autodm-n8n.html** � Versi�n con el Caso de Estudio completo de Auto-DM Instagram (n8n + Graph API + Telegram SRE), antes de cargar la documentaci�n multimedia de Merchant Integration Workflow - Fintech.
